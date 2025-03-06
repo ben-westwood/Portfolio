@@ -1,0 +1,1013 @@
+/* == FONTS == */
+/* 
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Montserrat-Regular'), url('assets/fonts/Montserrat-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Montserrat-Bold'), url('assets/fonts/Montserrat-Bold.otf') format('opentype');
+} */
+
+/* -----------------------
+Base styles
+------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #000; /* sets black as default text colour */
+    background-color: #eee; /* changes out of bounds body background colour */
+    font: 1em "Montserrat", Helvetica, Arial, Geneva, sans-serif; /* sets Montserrat as main font with others as fallback fonts */
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0 0 .5em;
+    font-weight: 500;
+    line-height: 1.1;
+    word-wrap: break-word;
+}
+
+h1 {
+    font-size: 2.25em; /* 36px */
+}
+
+h2 {
+    font-size: 1.75em; /* 28px */
+}
+
+h3 {
+    font-size: 1.375em; /* 22px */
+}
+
+h4 {
+    font-size: 1.125em; /* 18px */
+}
+
+h5 {
+    font-size: 1em; /* 16px */
+}
+
+h6 {
+    font-size: .875em; /* 14px */
+}
+
+p {
+    margin: 0 0 1.5em;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+blockquote
+{
+    padding: 1em 2em;
+    margin: 0 0 2em;
+    border-left: 0.313em solid #68C34F; /* 0.313em */
+    background-color: #eeeeee;
+}
+
+/* -----------------------
+Table
+------------------------*/
+
+hr {
+    height: 0;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    border: 0;
+    border-top: 0.063em solid #ddd; /* sets grey as colour */
+}
+
+tr:nth-of-type(odd) { 
+    background: #eee; /* sets every other table row (odd) as grey background */
+}
+
+th { 
+    background: #000; /* sets table headings as black background */
+    color: white;
+    font-weight: bold; 
+}
+
+th, td {
+    padding: .5em;
+    vertical-align: top;
+    text-align: left;
+    border: 0.063em solid #ddd; /* sets border as black colour */
+}
+
+li {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    word-wrap: break-word;
+}
+
+a:link {
+    color: #6AD069; /* applies orange colour to hyperlinks and removes all text decoration */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #6AD069; /* allows hyperlinks to keep colour after they have been clicked/visited */
+} 
+
+a:hover {
+    text-decoration: underline; /* gives hyperlinks underline text decoration when hovered over */
+} 
+
+
+/* -----------------------
+Form
+------------------------*/
+
+div#envelope {
+    width: 55%;
+    margin: 0.625em 30% 0.625em 25%;
+    padding: 0.625em 0;
+    border: 0.125em solid gray;
+    border-radius: 0.625em;
+}     
+form {
+    width: 70%;
+    margin: 4% 15%;
+}  
+
+/* Full-width input fields */
+input {
+    width: 100%;
+    padding: 0.938em;
+    border-radius: 0.313em; /* gives borders smooth corners */
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #eeeeee;
+    outline: none;
+}
+
+/* Add a background color when the inputs get focus */
+input:focus {
+    background-color: #cccccc;
+    outline: none;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+    background-color: #ffdddd;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.938em;
+    margin-top: 0.625em;
+    border: 0.063em solid #000; /* sets border for comments to black */
+    border-radius: 0.313em; /* gives borders smooth corners */
+    resize: none; /* disables ability to resize comment box */
+} 
+
+/* -----------------------
+Layout styles
+------------------------*/
+
+.container {
+    max-width: 50em; /* 800px, maximum width of content in the container div */
+    margin: 0 auto; /* centers the content in the container div of the page */
+}
+
+.header {
+    color: #fff; /* changes the header text colour */
+    background: #6AD069; /* changes the header background colour */
+    padding: 1.5em 3em;
+}
+
+.header-heading {
+    margin: 0;
+}
+
+.nav-bar {
+    background: #000; /* changes the navigation bar background colour */
+    padding: 1em 3em;
+    padding-bottom: 1em;
+}
+
+.content {
+    padding: 2em 3em;
+    background-color: #fff; /* background colour of content div */
+}
+
+.content-bar {
+    color: white; /* sets content bar text to white */
+    background: #000; /* sets content bar background to black */
+    padding: 1em;
+    margin-bottom: 1em;
+}
+
+.content-bar a {
+    color: white; /* keeps white colour for anchor tags */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content-bar h3 {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content-bar a:link {
+    color: #ffffff ; /* keeps white colour for hyperlinks */
+}
+.content-bar a:visited {
+    color: white; /* keeps white colour for hyperlinks after visiting page */
+}
+
+.footer {
+    color: #fff;
+    background: #000; /* sets footer to black background */
+    padding: 2em 3em;
+    word-wrap: break-word;
+}
+
+.footer p {
+    margin: auto;
+    color: #6AD069;
+}
+
+.news-jump-link a {
+    display: block;
+    padding-bottom: 0.625em;
+    padding-left: 0.625em;
+    font-size: 1.250em;
+    font-weight: bold;
+    color: #6AD069;
+    text-decoration: none;
+    margin-bottom: 1em;
+}
+
+.news-jump-link a:visited {
+    color: #000;
+}
+
+.select-style {
+    padding: 0;
+    margin: 0;
+    border: 0.063em solid #ccc;
+    width: 7.500em;
+    border-radius: 0.188em;
+    overflow: hidden;
+    background-color: #fff;
+    background: #fff;
+    position: relative;
+}
+
+.select-style:after {
+    top: 50%;
+    left: 85%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #000000;
+    border-width: 0.313em;
+    margin-top: -0.125em;
+}
+
+.select-style select {
+    padding: 0.313em 0.500em;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    display: none;
+}
+
+.result p {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+.choices {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.choice {
+    flex: 1;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+
+.choice.active {
+    background-color: #6AD069;
+    color: white;
+    border-color: #6AD069;
+}
+
+.result-display {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 18px;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.score-item {
+    text-align: center;
+    flex: 1;
+}
+
+.game-history {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.game-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.game-history li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.game-history li:last-child {
+    border-bottom: none;
+}
+
+/* -----------------------
+Nav
+------------------------*/
+
+.nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav li {
+    display: inline;
+    margin: 0 1em 0 0;
+}
+
+.nav a {
+    display: inline;
+    padding: 0;
+    border-bottom: 0 solid gray;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav a:link {
+    color: white;
+}
+.nav a:visited {
+    color: white;
+}
+
+.nav a:hover {
+    color: white;
+    background-color: #6AD069; /* changes the nav bar link hover background to orange */
+}
+
+/* -----------------------
+Single styles
+------------------------*/
+
+.image-responsive {
+    max-width: 100%;
+}
+
+.image-responsive1 {
+    width: 150%; max-width: 100%;
+}
+
+.image-responsive2 {
+    max-width: 50%;
+    float: left;
+    padding-right: 1em;
+}
+
+.image-responsive3 {
+    max-width: 25%;
+}
+
+.image-responsive4 {
+    max-width: 50%;
+    margin: auto;
+}
+
+.video-responsive {
+    max-width: 100%;
+}
+
+.button1 {
+    color: #fff;
+    background-color: #000;
+    border-color: #222;
+    padding: .5em 1em;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 0.063em solid transparent;
+    border-radius: .2em;
+    text-decoration: none;
+}
+
+.button1:hover {
+    color: #fff;
+    background-color: #68C34F;
+}
+
+.button2 {
+    color: #ffffff;
+    background-color: #6AD069;
+    border: none;
+    padding: .5em 1em;
+    width: 15%;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.button2:hover {
+    background-color: #68C34F
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1.250em;
+    border-collapse: collapse; 
+    word-wrap: break-word;
+}
+
+.list-unstyled
+{
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline
+{
+    padding-left: 0;
+    margin-left: -0.313em;
+    list-style: none;
+}
+
+.list-inline > li
+{
+    display: inline-block;
+    padding-right: 0.313em;
+    padding-left: 0.313em;
+}
+
+.message-info {
+    position: relative;
+    border-left: 0.250em solid #68C34F;
+    margin: 0 0 1em;
+    padding: 0.938em 1.250em 0.938em 0.625em;
+    background-color: #eeeeee;
+}
+.checkbox-message-info {
+    border-left: 0.250em solid #bcbcbc;
+}
+
+.message-info input {
+    float: left;
+    width: 1.250em;
+    opacity: 1;
+}
+.message-info input:focus {
+    outline: none;
+}
+.message-info input:after {
+    position: absolute;
+    top: 0.813em;
+    left: 0.438em;
+    width: 1.250em;
+    height: 1.250em;
+    content: '';
+    background: url(../assets/img/closed.gif) no-repeat;
+}
+.checkbox-message-info input:after {
+    background-color: #898989;
+}
+
+.checkbox-message-info input:hover+label{
+    color: black;
+}
+.message-info input:focus:after {
+    background-color: #000;
+    outline: 0.313em auto #85bffd;
+}
+.message-info input:focus+label {
+    color: #3c4e1b;
+}
+.message-info input:checked:after {
+    background: url(../img/open.gif) no-repeat;
+}
+.message-info input:checked:hover:after, .message-info input:checked:focus:after {
+    background-color: #759a35;
+}
+.message-info input:checked:focus:after {
+    outline: 0.313em auto #85bffd;
+}
+.message-info label {
+    cursor: pointer;
+    color: #000;
+}
+.checkbox-message-content {
+    overflow: hidden;
+    height: 0;
+    opacity: .5;
+    transition: all .5s ease;
+}
+.message-info input:checked ~ .checkbox-message-content {
+    height: auto;
+    opacity: 1;
+}
+.checkbox-message-inner {
+    padding: 0.625em 0 0.625em 1.688em;
+}
+
+/* Checkbox container */
+.checkbox-container {
+    display: block;
+    position: relative;
+    padding-left: 2.188em;
+    margin-bottom: 0.750em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.563em;
+    width: 1.563em;
+    background-color: #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkbox-checkmark {
+    background-color: #aaa;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkbox-checkmark {
+    background-color: #68C34F;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkbox-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkbox-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox-container .checkbox-checkmark:after {
+    left: 0.563em;
+    top: 0.313em;
+    width: 0.313em;
+    height: 0.625em;
+    border: solid white;
+    border-width: 0 0.188em 0.188em 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* _______________________________________ */
+
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 2.188em;
+    margin-bottom: 0.750em;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radio-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.563em;
+    width: 1.563em;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radio-checkmark {
+    background-color: #aaa;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radio-checkmark {
+    background-color: #68C34F;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radio-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radio-checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radio-checkmark:after {
+    top: 0.563em;
+    left: 0.563em;
+    width: 0.500em;
+    height: 0.500em;
+    border-radius: 50%;
+    background: white;
+}
+
+* {box-sizing: border-box}
+
+/* Set a style for all buttons */
+button {
+    flex: 1;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 4px;
+}
+
+button:hover {
+    opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+    float: left;
+    width: 50%;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.75);
+    padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    position: relative;
+    outline: 0;
+    width: 600px;
+    padding: 5px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #eeeeee;
+}
+
+.close:hover,
+.close:focus {
+    color: #f44336;
+    cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.animate-zoom {
+    animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}
+}
+
+#regForm {
+    background-color: #ffffff;
+    margin: auto;
+    width: 70%;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+#prevBtn {
+    background-color: #bbbbbb;
+}
+
+#nextBtn {
+    background-color: #68C34F;
+}
+
+.buttonOrange {
+    background-color: #68C34F;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+    background-color: #68C34F;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+span.password {
+    float: right;
+    padding-top: 16px;
+}
+
+.container2 {
+    padding-bottom: 60px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.calculator {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.percentage-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.percentage-button {
+    flex: 1;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.percentage-button.active {
+    background-color: #6AD069;
+    color: white;
+    border-color: #6AD069;
+}
+
+.custom-tip {
+    display: none;
+    margin-top: 10px;
+}
+
+
+
+/* -----------------------
+Wide styles
+------------------------*/
+@media 
+only screen and (max-width: 52em) {
+    .header {
+        padding: 1em 1.25em;
+    }
+    
+    .nav-bar {
+        padding: 0;
+    }
+    
+    .content {
+        padding: 1em 1.25em;
+    }
+    
+    .footer {
+        padding: 1em 1.25em;
+    }
+    
+    .nav li {
+        display: inline;
+        margin: 0;
+    }
+    
+    .nav a {
+        display: block;
+        padding: .7em 1.25em;
+        border-bottom: 0.063em;
+    }
+    
+    .cancelbtn, .signupbtn, .button1, .button2, .percentage-button {
+        width: 100%;
+        margin-top: 0.25em;
+    }
+    
+    .modal-content {
+        margin:0 10px;width:auto!important
+    }
+    
+    .modal {
+        padding-top:30px;
+    }
+    
+    #regForm {
+        margin:0 10px;width:100%!important
+        
+    }
+    
+    #prevBtn, #nextBtn {
+        width: 100%;
+    }
+    
+    span.password {
+        display: block;
+        float: none;
+    }
+
+    /* == TABLES == */
+    /* Forces tables to stop acting like tables */
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers */
+    thead tr { 
+        position: absolute;
+        top: -625em;
+        left: -625em;
+    }
+    
+    tr {
+        border: 0.063em solid #ccc;
+    }
+    
+    td { 
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 0.063em solid #eee; 
+        position: relative;
+        padding-left: 50%; 
+    }
+    
+    td:before { 
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 0.375em;
+        left: 0.375em;
+        width: 45%; 
+        padding-right: 0.625em; 
+        white-space: nowrap;
+    }
+}

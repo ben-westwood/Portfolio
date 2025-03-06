@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ben W Portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="Description" lang="en" content="Ben W Portfolio">
+        <meta name="author" content="Ben Westwood">
+        <meta name="robots" content="index, follow">
+        <meta name="keywords" content="Ben W Portfolio">
+        <!-- Icon -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" title="style" href="assets/css/style.css">
+        <!-- CSS Font -->
+        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <!-- Scripts -->
+        <script defer src="assets/js/tip-calculator.js"></script>
+        <script defer src="assets/js/rock-paper-scissors.js"></script>
+        <!-- Cookie Consent -->
+        <script>
+            window.cookieconsent_options = {
+                "message": "This website uses cookies to ensure you get the best experience on our website",
+                "dismiss": "Got it!",
+                "learnMore": "More info",
+                "link": "privacy-policy.html",
+                "theme": "dark-bottom"
+            };
+        </script>
+        <script defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+        <!-- End Cookie Consent -->
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <h1 class="header-heading">Ben W Portfolio</h1>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="container">
+                <ul class="nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="main">
+                    <h1>Welcome to the bootcamp website!</h1>
+                    <hr>
+                    <p>This is the bootcamp website!</p>
+                    <div class="content-bar">
+                        <h3 id="about">About</h3>
+                    </div>
+                    <p>Stuff goes here</p>
+                    <p>Probably something about... about</p>
+                    <div class="content-bar">
+                        <h3 id="projects">Projects</h3>
+                    </div>
+                    <div class="calculator">
+                        <h1>Tip Calculator</h1>
+                        <div class="input-group">
+                            <label for="billAmount">Bill Amount (£)</label>
+                            <input type="number" id="billAmount" placeholder="Enter bill amount" min="0" step="0.01">
+                            <div id="billError" class="error">Please enter a valid bill amount</div>
+                        </div>
+                        <div class="input-group">
+                            <label>Select Tip Percentage</label>
+                            <div class="percentage-buttons">
+                                <div class="percentage-button" data-percentage="10">10%</div>
+                                <div class="percentage-button" data-percentage="15">15%</div>
+                                <div class="percentage-button" data-percentage="20">20%</div>
+                                <div class="percentage-button" data-percentage="custom">Custom</div>
+                            </div>
+                            <div id="percentageError" class="error">Please select a tip percentage</div>
+                            <div class="custom-tip">
+                                <input type="number" id="customTip" placeholder="Enter custom percentage" min="0" step="1">
+                                <div id="tipError" class="error">Please enter a valid percentage</div>
+                            </div>
+                        </div>
+                        <button id="calculateBtn">Calculate Tip</button>
+                        <div class="result" id="result">
+                            <p>Bill Amount: <span id="displayBill">£0.00</span>
+                            </p>
+                            <p>Tip Percentage: <span id="displayTipPercentage">0%</span>
+                            </p>
+                            <p>Tip Amount: <span id="displayTip">£0.00</span>
+                            </p>
+                            <p>Total Amount: <span id="displayTotal">£0.00</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="calculator">
+                        <h1>Rock Paper Scissors</h1>
+                        <div class="score-board">
+                            <div class="score-item">
+                                <h3>Player</h3>
+                                <p id="playerScore">0</p>
+                            </div>
+                            <div class="score-item">
+                                <h3>Computer</h3>
+                                <p id="computerScore">0</p>
+                            </div>
+                        </div>
+                        <div class="choices">
+                            <div class="choice" data-choice="rock">Rock</div>
+                            <div class="choice" data-choice="paper">Paper</div>
+                            <div class="choice" data-choice="scissors">Scissors</div>
+                        </div>
+                        <div class="result-display" id="resultDisplay">Pick your option</div>
+                        <button id="resetBtn">Reset the game</button>
+                        <div class="game-history">
+                            <h3>Game History</h3>
+                            <ul id="historyList"></ul>
+                        </div>
+                    </div>
+                    <div class="content-bar">
+                        <h3 id="contact">Contact</h3>
+                    </div>
+                    <div class="container">
+                        <!-- <form action=""> -->
+                        <label for="fname">First Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="Your first name">
+                        <label for="lname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" placeholder="Your last name">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="your_email" placeholder="Your email">
+                        <label for="subject">Subject</label>
+                        <textarea id="subject" name="subject" placeholder="Write your message here" style="height:200px"></textarea>
+                        <input class="button1" type="submit" value="Submit">
+                        <!-- </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <p> Ben W Portfolio. 2025 &ndash; <script>
+                        var today = new Date()
+                        var year = today.getFullYear()
+                        document.write(year)
+                    </script>
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
