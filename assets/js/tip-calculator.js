@@ -40,6 +40,28 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
+    // In your percentage button click handler
+    document.querySelectorAll('.percentage-button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            document.querySelectorAll('.percentage-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Show/hide custom tip input based on button
+            const customTip = document.querySelector('.custom-tip');
+            if (this.dataset.value === 'custom') {
+                customTip.classList.add('show');
+                customTip.querySelector('input').focus();
+            } else {
+                customTip.classList.remove('show');
+            }
+        });
+    });
+    
     // Calculate tip when button is clicked
     calculateBtn.addEventListener("click", function() {
         // Reset error messages
