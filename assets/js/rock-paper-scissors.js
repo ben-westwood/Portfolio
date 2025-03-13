@@ -29,12 +29,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function addToHistory(playerChoice, computerChoice, result) {
-        const listItem = document.createElement("li");
-        listItem.textContent = `Player: ${playerChoice} | Computer: ${computerChoice} | Result: ${result}`;
-        historyList.insertBefore(listItem, historyList.firstChild);
-
-        // List should only have 5 items
-        if (historyList.children.length > 5) {
+        const historyList = document.getElementById('historyList');
+        const li = document.createElement('li');
+        
+        const formattedPlayerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+        const formattedComputerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
+        
+        li.innerHTML = `
+            <span class="round-info">
+                Player: ${formattedPlayerChoice} vs Computer: ${formattedComputerChoice}
+            </span>
+            <span class="result-badge ${result.toLowerCase()}">
+                ${result === "Tie" ? "Draw" : result}
+            </span>
+        `;
+        
+        historyList.insertBefore(li, historyList.firstChild);
+        
+        // Keep only the last 10 games in history
+        if (historyList.children.length > 10) {
             historyList.removeChild(historyList.lastChild);
         }
     }
