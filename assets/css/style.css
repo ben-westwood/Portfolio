@@ -1,18 +1,3 @@
-/* == FONTS == */
-/* 
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Montserrat-Regular'), url('assets/fonts/Montserrat-Regular.otf') format('opentype');
-}
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    src: local('Montserrat-Bold'), url('assets/fonts/Montserrat-Bold.otf') format('opentype');
-} */
-
 /* -----------------------
 Base styles
 ------------------------*/
@@ -62,18 +47,6 @@ p {
     word-wrap: break-word;
 }
 
-blockquote
-{
-    padding: 1em 2em;
-    margin: 0 0 2em;
-    border-left: 0.313em solid #68C34F; /* 0.313em */
-    background-color: #eeeeee;
-}
-
-/* -----------------------
-Table
-------------------------*/
-
 hr {
     height: 0;
     margin-top: 1em;
@@ -82,62 +55,15 @@ hr {
     border-top: 0.063em solid #ddd; /* sets grey as colour */
 }
 
-tr:nth-of-type(odd) { 
-    background: #eee; /* sets every other table row (odd) as grey background */
-}
-
-th { 
-    background: #000; /* sets table headings as black background */
-    color: white;
-    font-weight: bold; 
-}
-
-th, td {
-    padding: .5em;
-    vertical-align: top;
-    text-align: left;
-    border: 0.063em solid #ddd; /* sets border as black colour */
-}
-
-li {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    word-wrap: break-word;
-}
-
-a:link {
-    color: #6AD069; /* applies orange colour to hyperlinks and removes all text decoration */
-    text-decoration: none;
-}
-
-a:visited {
-    color: #6AD069; /* allows hyperlinks to keep colour after they have been clicked/visited */
-} 
-
-a:hover {
-    text-decoration: underline; /* gives hyperlinks underline text decoration when hovered over */
-} 
-
 
 /* -----------------------
 Form
 ------------------------*/
 
-div#envelope {
-    width: 55%;
-    margin: 0.625em 30% 0.625em 25%;
-    padding: 0.625em 0;
-    border: 0.125em solid gray;
-    border-radius: 0.625em;
-}     
-form {
-    width: 70%;
-    margin: 4% 15%;
-}  
-
 /* Full-width input fields */
 input {
     width: 100%;
+    box-sizing: border-box;
     padding: 0.938em;
     border-radius: 0.313em; /* gives borders smooth corners */
     margin: 5px 0 22px 0;
@@ -159,14 +85,26 @@ input.invalid {
     outline: none;
 }
 
-textarea {
-    width: 100%;
-    padding: 0.938em;
-    margin-top: 0.625em;
-    border: 0.063em solid #000; /* sets border for comments to black */
-    border-radius: 0.313em; /* gives borders smooth corners */
-    resize: none; /* disables ability to resize comment box */
-} 
+/* Custom select dropdown styling */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236AD069'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    padding-right: 30px !important;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+/* Hover state for dropdowns */
+select:hover {
+    border-color: #6AD069;
+}
 
 /* -----------------------
 Layout styles
@@ -236,56 +174,6 @@ Layout styles
     color: #6AD069;
 }
 
-.news-jump-link a {
-    display: block;
-    padding-bottom: 0.625em;
-    padding-left: 0.625em;
-    font-size: 1.250em;
-    font-weight: bold;
-    color: #6AD069;
-    text-decoration: none;
-    margin-bottom: 1em;
-}
-
-.news-jump-link a:visited {
-    color: #000;
-}
-
-.select-style {
-    padding: 0;
-    margin: 0;
-    border: 0.063em solid #ccc;
-    width: 7.500em;
-    border-radius: 0.188em;
-    overflow: hidden;
-    background-color: #fff;
-    background: #fff;
-    position: relative;
-}
-
-.select-style:after {
-    top: 50%;
-    left: 85%;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    border-color: rgba(0, 0, 0, 0);
-    border-top-color: #000000;
-    border-width: 0.313em;
-    margin-top: -0.125em;
-}
-
-.select-style select {
-    padding: 0.313em 0.500em;
-    width: 130%;
-    border: none;
-    box-shadow: none;
-    background-color: transparent;
-    background-image: none;
-}
-
 .result {
     margin-top: 20px;
     padding: 15px;
@@ -342,37 +230,152 @@ Layout styles
 
 .score-board {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.score-item {
-    text-align: center;
-    flex: 1;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 4px;
+    background: none;
+    border: none;
 }
 
 .game-history {
     margin-top: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #f9f9f9;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.game-history h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.history-container {
     max-height: 200px;
     overflow-y: auto;
 }
 
 .game-history ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .game-history li {
-    padding: 5px 0;
+    padding: 10px 0;
     border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .game-history li:last-child {
     border-bottom: none;
+}
+
+.game-history .round-info {
+    flex: 1;
+    color: #333;
+}
+
+.game-history .result-badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+    margin-left: 15px;
+}
+
+/* Add styling for reset button */
+#resetBtn {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+#resetBtn:hover {
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 52em) {
+    .game-history li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-history .result-badge {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
+
+.history-container {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.game-history h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.game-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-history li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+}
+
+.game-history li:last-child {
+    border-bottom: none;
+}
+
+.game-history .round-info {
+    flex: 1;
+}
+
+.game-history .result-badge {
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.game-history .win {
+    background-color: #e8f5e9;
+    color: #6AD069;
+}
+
+.game-history .lose {
+    background-color: #ffebee;
+    color: #f44336;
+}
+
+.game-history .draw {
+    background-color: #f5f5f5;
+    color: #666;
 }
 
 /* -----------------------
@@ -407,82 +410,12 @@ Nav
 
 .nav a:hover {
     color: white;
-    background-color: #6AD069; /* changes the nav bar link hover background to orange */
+    background-color: #6AD069;
 }
 
 /* -----------------------
 Single styles
 ------------------------*/
-
-.image-responsive {
-    max-width: 100%;
-}
-
-.image-responsive1 {
-    width: 150%; max-width: 100%;
-}
-
-.image-responsive2 {
-    max-width: 50%;
-    float: left;
-    padding-right: 1em;
-}
-
-.image-responsive3 {
-    max-width: 25%;
-}
-
-.image-responsive4 {
-    max-width: 50%;
-    margin: auto;
-}
-
-.video-responsive {
-    max-width: 100%;
-}
-
-.button1 {
-    color: #fff;
-    background-color: #000;
-    border-color: #222;
-    padding: .5em 1em;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    border: 0.063em solid transparent;
-    border-radius: .2em;
-    text-decoration: none;
-}
-
-.button1:hover {
-    color: #fff;
-    background-color: #68C34F;
-}
-
-.button2 {
-    color: #ffffff;
-    background-color: #6AD069;
-    border: none;
-    padding: .5em 1em;
-    width: 15%;
-    margin: auto;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.button2:hover {
-    background-color: #68C34F
-}
-
-.table {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 1.250em;
-    border-collapse: collapse; 
-    word-wrap: break-word;
-}
 
 .list-unstyled
 {
@@ -504,207 +437,6 @@ Single styles
     padding-left: 0.313em;
 }
 
-.message-info {
-    position: relative;
-    border-left: 0.250em solid #68C34F;
-    margin: 0 0 1em;
-    padding: 0.938em 1.250em 0.938em 0.625em;
-    background-color: #eeeeee;
-}
-.checkbox-message-info {
-    border-left: 0.250em solid #bcbcbc;
-}
-
-.message-info input {
-    float: left;
-    width: 1.250em;
-    opacity: 1;
-}
-.message-info input:focus {
-    outline: none;
-}
-.message-info input:after {
-    position: absolute;
-    top: 0.813em;
-    left: 0.438em;
-    width: 1.250em;
-    height: 1.250em;
-    content: '';
-    background: url(../assets/img/closed.gif) no-repeat;
-}
-.checkbox-message-info input:after {
-    background-color: #898989;
-}
-
-.checkbox-message-info input:hover+label{
-    color: black;
-}
-.message-info input:focus:after {
-    background-color: #000;
-    outline: 0.313em auto #85bffd;
-}
-.message-info input:focus+label {
-    color: #3c4e1b;
-}
-.message-info input:checked:after {
-    background: url(../img/open.gif) no-repeat;
-}
-.message-info input:checked:hover:after, .message-info input:checked:focus:after {
-    background-color: #759a35;
-}
-.message-info input:checked:focus:after {
-    outline: 0.313em auto #85bffd;
-}
-.message-info label {
-    cursor: pointer;
-    color: #000;
-}
-.checkbox-message-content {
-    overflow: hidden;
-    height: 0;
-    opacity: .5;
-    transition: all .5s ease;
-}
-.message-info input:checked ~ .checkbox-message-content {
-    height: auto;
-    opacity: 1;
-}
-.checkbox-message-inner {
-    padding: 0.625em 0 0.625em 1.688em;
-}
-
-/* Checkbox container */
-.checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 2.188em;
-    margin-bottom: 0.750em;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default checkbox */
-.checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom checkbox */
-.checkbox-checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1.563em;
-    width: 1.563em;
-    background-color: #ccc;
-}
-
-/* On mouse-over, add a grey background color */
-.checkbox-container:hover input ~ .checkbox-checkmark {
-    background-color: #aaa;
-}
-
-/* When the checkbox is checked, add a blue background */
-.checkbox-container input:checked ~ .checkbox-checkmark {
-    background-color: #68C34F;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkbox-checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the checkmark when checked */
-.checkbox-container input:checked ~ .checkbox-checkmark:after {
-    display: block;
-}
-
-/* Style the checkmark/indicator */
-.checkbox-container .checkbox-checkmark:after {
-    left: 0.563em;
-    top: 0.313em;
-    width: 0.313em;
-    height: 0.625em;
-    border: solid white;
-    border-width: 0 0.188em 0.188em 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-/* _______________________________________ */
-
-.radio-container {
-    display: block;
-    position: relative;
-    padding-left: 2.188em;
-    margin-bottom: 0.750em;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.radio-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
-
-/* Create a custom radio button */
-.radio-checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 1.563em;
-    width: 1.563em;
-    background-color: #ccc;
-    border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.radio-container:hover input ~ .radio-checkmark {
-    background-color: #aaa;
-}
-
-/* When the radio button is checked, add a blue background */
-.radio-container input:checked ~ .radio-checkmark {
-    background-color: #68C34F;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.radio-checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.radio-container input:checked ~ .radio-checkmark:after {
-    display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.radio-container .radio-checkmark:after {
-    top: 0.563em;
-    left: 0.563em;
-    width: 0.500em;
-    height: 0.500em;
-    border-radius: 50%;
-    background: white;
-}
-
-* {box-sizing: border-box}
-
-/* Set a style for all buttons */
 button {
     flex: 1;
     background-color: #4CAF50;
@@ -722,157 +454,6 @@ button:hover {
     opacity:1;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-    float: left;
-    width: 50%;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.75);
-    padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fff;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    position: relative;
-    outline: 0;
-    width: 600px;
-    padding: 5px;
-}
-
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 35px;
-    top: 15px;
-    font-size: 40px;
-    font-weight: bold;
-    color: #eeeeee;
-}
-
-.close:hover,
-.close:focus {
-    color: #f44336;
-    cursor: pointer;
-}
-
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.animate-zoom {
-    animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}
-}
-
-#regForm {
-    background-color: #ffffff;
-    margin: auto;
-    width: 70%;
-}
-
-/* Hide all steps by default: */
-.tab {
-    display: none;
-}
-
-#prevBtn {
-    background-color: #bbbbbb;
-}
-
-#nextBtn {
-    background-color: #68C34F;
-}
-
-.buttonOrange {
-    background-color: #68C34F;
-}
-
-/* Make circles that indicate the steps of the form: */
-.step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbbbbb;
-    border: none;  
-    border-radius: 50%;
-    display: inline-block;
-    opacity: 0.5;
-}
-
-.step.active {
-    opacity: 1;
-}
-
-/* Mark the steps that are finished and valid: */
-.step.finish {
-    background-color: #68C34F;
-}
-
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-span.password {
-    float: right;
-    padding-top: 16px;
-}
-
-.container2 {
-    padding-bottom: 60px;
-}
-
-/* Add a green text color and a checkmark when the requirements are right */
-.valid {
-    color: green;
-}
-
-.valid:before {
-    position: relative;
-    left: -35px;
-    content: "✔";
-}
-
-/* Add a red text color and an "x" when the requirements are wrong */
-.invalid {
-    color: red;
-}
-
-.invalid:before {
-    position: relative;
-    left: -35px;
-    content: "✖";
-}
-
 .center {
     margin-left: auto;
     margin-right: auto;
@@ -887,20 +468,53 @@ span.password {
     margin-bottom: 15px;
 }
 
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+.input-group input:focus {
+    border-color: #6AD069;
+    outline: none;
+    background-color: #fff;
+}
+
 .percentage-buttons {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     margin-bottom: 15px;
 }
 
 .percentage-button {
     flex: 1;
     padding: 10px;
-    background-color: #eee;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+.percentage-button:hover {
+    border-color: #6AD069;
+    background-color: #f0f9f0;
 }
 
 .percentage-button.active {
@@ -911,10 +525,466 @@ span.password {
 
 .custom-tip {
     display: none;
-    margin-top: 10px;
+    margin-top: 15px;
+    transition: all 0.3s ease;
 }
 
+.custom-tip.show {
+    display: block;
+}
 
+.custom-tip input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.custom-tip input:focus {
+    border-color: #6AD069;
+    outline: none;
+    background-color: #fff;
+}
+
+#calculateBtn {
+    width: 100%;
+    padding: 10px;
+    background-color: #6AD069;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+#calculateBtn:hover {
+    opacity: 0.9;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.result p {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.result p:last-child {
+    border-bottom: none;
+    font-weight: bold;
+    color: #6AD069;
+}
+
+.error {
+    color: #f44336;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: none;
+}
+
+@media only screen and (max-width: 52em) {
+    .percentage-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .percentage-button {
+        width: 100%;
+    }
+}
+
+/* Expense Tracker Styles */
+.expense-tracker {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+#expense-form {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+}
+
+#expense-form input,
+#expense-form select,
+#currency-select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    margin: 0;
+}
+
+#expense-form input:focus,
+#expense-form select:focus {
+    border-color: #6AD069;
+    outline: none;
+    background-color: #fff;
+}
+
+.expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.expense-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.expense-item:hover {
+    background-color: #f9f9f9;
+}
+
+.expense-info {
+    flex: 1;
+}
+
+.expense-description {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.expense-details {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.expense-amount {
+    font-weight: bold;
+    color: #6AD069;
+    margin: 0 20px;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.delete-btn:hover {
+    opacity: 0.8;
+}
+
+#total-amount {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6AD069;
+    text-align: right;
+    margin: 20px 0;
+}
+
+.stats-container {
+    margin-top: 20px;
+}
+
+.stat-item {
+    margin-bottom: 15px;
+}
+
+.stat-category {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.stat-bar-container {
+    background-color: #eee;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    background-color: #6AD069;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.stat-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+#loading-indicator {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+#currency-select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#currency-select:focus {
+    border-color: #6AD069;
+    outline: none;
+    background-color: #fff;
+}
+
+.game-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.choices {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.choice {
+    flex: 1;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    border-color: #6AD069;
+    background-color: #f0f9f0;
+}
+
+.choice.active {
+    background-color: #6AD069;
+    color: white;
+    border-color: #6AD069;
+}
+
+.result-display {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1.2em;
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 4px;
+    background: none;
+    border: none;
+}
+
+.score-item {
+    text-align: center;
+}
+
+.score-item span {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #6AD069;
+    margin-top: 5px;
+}
+
+.game-history {
+    margin-top: 20px;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+.game-history h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.history-container {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.game-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.game-history li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-history li:last-child {
+    border-bottom: none;
+}
+
+.game-history .round-info {
+    flex: 1;
+    color: #333;
+}
+
+.game-history .result-badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    min-width: 60px;
+    text-align: center;
+    margin-left: 15px;
+}
+
+/* Add styling for reset button */
+#resetBtn {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+#resetBtn:hover {
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 52em) {
+    .game-history li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-history .result-badge {
+        margin: 10px 0 0 0;
+        width: 100%;
+    }
+}
+
+.game-history {
+    margin-top: 20px;
+}
+
+.game-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.game-history li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-history li:last-child {
+    border-bottom: none;
+}
+
+.win {
+    color: #6AD069;
+    font-weight: bold;
+}
+
+.lose {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.draw {
+    color: #666;
+    font-weight: bold;
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.reset-btn:hover {
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 52em) {
+    .choices {
+        flex-direction: column;
+    }
+
+    .choice {
+        width: 100%;
+    }
+
+    .score-board {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .score-item {
+        padding: 10px 0;
+        border-bottom: none;
+    }
+
+    .reset-btn {
+        margin-top: 20px;
+    }
+}
 
 /* -----------------------
 Wide styles
@@ -948,66 +1018,179 @@ only screen and (max-width: 52em) {
         border-bottom: 0.063em;
     }
     
-    .cancelbtn, .signupbtn, .button1, .button2, .percentage-button {
+    .percentage-button {
         width: 100%;
         margin-top: 0.25em;
     }
-    
-    .modal-content {
-        margin:0 10px;width:auto!important
-    }
-    
-    .modal {
-        padding-top:30px;
-    }
-    
-    #regForm {
-        margin:0 10px;width:100%!important
-        
-    }
-    
-    #prevBtn, #nextBtn {
-        width: 100%;
-    }
-    
-    span.password {
-        display: block;
-        float: none;
+
+    .expense-item {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    /* == TABLES == */
-    /* Forces tables to stop acting like tables */
-    table, thead, tbody, th, td, tr { 
-        display: block; 
+    .expense-amount {
+        margin: 10px 0;
     }
-    
-    /* Hide table headers */
-    thead tr { 
-        position: absolute;
-        top: -625em;
-        left: -625em;
+
+    .delete-btn {
+        width: 100%;
     }
-    
-    tr {
-        border: 0.063em solid #ccc;
+
+    #currency-select {
+        width: 100%;
+        margin-bottom: 15px;
     }
-    
-    td { 
-        /* Behave  like a "row" */
-        border: none;
-        border-bottom: 0.063em solid #eee; 
-        position: relative;
-        padding-left: 50%; 
+}
+
+/* Add/Update Form Section styles */
+.form-section {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.form-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #6AD069;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: opacity 0.2s;
+    margin-top: 10px;
+}
+
+/* Currency selector spacing */
+.currency-selector {
+    margin-bottom: 25px;
+}
+
+.currency-selector label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.expense-section {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.expense-section h2 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.stats-heading h3 {
+    color: #333;
+    margin: 20px 0 15px 0;
+    font-size: 1.2em;
+}
+
+/* Add styling for currency selector */
+.currency-selector {
+    margin-bottom: 20px;
+}
+
+.currency-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#currency-select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#currency-select:focus {
+    border-color: #6AD069;
+    outline: none;
+    background-color: #fff;
+}
+
+@media only screen and (max-width: 52em) {
+    .form-section,
+    .expense-section {
+        padding: 15px;
     }
-    
-    td:before { 
-        /* Now like a table header */
-        position: absolute;
-        /* Top/left values mimic padding */
-        top: 0.375em;
-        left: 0.375em;
-        width: 45%; 
-        padding-right: 0.625em; 
-        white-space: nowrap;
+
+    .form-group input,
+    .form-group select,
+    #currency-select {
+        padding: 10px;
     }
+}
+
+#expense-form {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group select,
+#currency-select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 1em;
+    margin: 0;
 }
