@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Display the result and update the scores
-        resultDisplay.textContent = result === "Tie" ? "It's a tie!" : `${result} wins! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()} vs ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase()}`;
+        resultDisplay.textContent = result === "Tie" ? "It's a draw!" : `${result} wins! ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()} vs ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase()}`;
 
         // Add to history
         addToHistory(playerSelection, computerSelection, result);
