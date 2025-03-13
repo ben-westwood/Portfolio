@@ -196,21 +196,24 @@ Layout styles
 
 .choices {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 15px;
+    margin: 20px 0;
+    max-width: 100%;
 }
 
 .choice {
-    flex: 1;
-    padding: 10px;
-    background-color: #eee;
+    flex: 0 1 calc(33.33% - 10px);
+    width: calc(33.33% - 10px);
+    padding: 15px 8px;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
-    font-size: 1.2em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
 }
-
 
 .choice.active {
     background-color: #6AD069;
@@ -497,24 +500,23 @@ button:hover {
 
 .percentage-buttons {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 15px;
+    max-width: 100%;
 }
 
 .percentage-button {
-    flex: 1;
-    padding: 10px;
+    flex: 0 1 calc(33.33% - 10px);
+    width: calc(33.33% - 10px);
+    padding: 12px 8px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease;
-}
-
-.percentage-button:hover {
-    border-color: #6AD069;
-    background-color: #f0f9f0;
+    box-sizing: border-box;
 }
 
 .percentage-button.active {
@@ -593,6 +595,26 @@ button:hover {
 }
 
 @media only screen and (max-width: 52em) {
+    .percentage-buttons {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .percentage-button {
+        flex: 0 1 calc(50% - 8px);
+        width: calc(50% - 8px);
+    }
+
+    .choices {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .choice {
+        flex: 0 1 calc(50% - 8px);
+        width: calc(50% - 8px);
+    }
+
     .percentage-buttons {
         flex-direction: column;
         gap: 10px;
@@ -767,19 +789,23 @@ button:hover {
 
 .choices {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
     margin: 20px 0;
+    max-width: 100%;
 }
 
 .choice {
-    flex: 1;
-    padding: 15px;
+    flex: 0 1 calc(33.33% - 10px);
+    width: calc(33.33% - 10px);
+    padding: 15px 8px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 4px;
     cursor: pointer;
     text-align: center;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .choice:hover {
@@ -1193,4 +1219,72 @@ only screen and (max-width: 52em) {
     background-color: #f9f9f9;
     font-size: 1em;
     margin: 0;
+}
+
+@media only screen and (max-width: 52em) {
+    .percentage-button,
+    .choice {
+        flex: 1 1 calc(50% - 10px);
+    }
+}
+
+@media only screen and (max-width: 30em) {
+    .percentage-button,
+    .choice {
+        flex: 1 1 100%;
+    }
+}
+
+/* Base styles for containers */
+.percentage-buttons,
+.choices {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Base styles for buttons */
+.percentage-button,
+.choice {
+    flex: 1 1 calc(33.333% - 10px);
+    padding: 12px 8px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Media query for tablets */
+@media only screen and (max-width: 52em) {
+    .percentage-buttons,
+    .choices {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .percentage-button,
+    .choice {
+        flex: 1 1 calc(50% - 8px);
+    }
+}
+
+/* Media query for mobile */
+@media only screen and (max-width: 30em) {
+    .percentage-buttons,
+    .choices {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .percentage-button,
+    .choice {
+        flex: 1 1 auto;
+        width: 100%;
+    }
 }
