@@ -1288,3 +1288,76 @@ only screen and (max-width: 52em) {
         width: 100%;
     }
 }
+
+/* Project Section Styles - Consolidated Version */
+.project-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.project-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.project-links {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-links a {
+    display: inline-block;
+    text-decoration: none;
+    width: auto;
+    min-width: 120px;
+    max-width: fit-content;
+    padding: 10px;
+}
+
+.project-details {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.project-details h3 {
+    color: #333;
+    margin: 15px 0 10px 0;
+}
+
+.project-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.project-details li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+@media only screen and (max-width: 52em) {
+    .project-content {
+        padding: 15px 0;
+    }
+    
+    .project-links {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .project-links a {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+}
