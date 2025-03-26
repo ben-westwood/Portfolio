@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const computerScoreDisplay = document.getElementById("computerScore");
     const historyList = document.getElementById("historyList");
     const resetBtn = document.getElementById("resetBtn");
+    const gameHistorySection = document.querySelector('.game-history');
 
     let playerScore = 0;
     let computerScore = 0;
@@ -31,6 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function addToHistory(playerChoice, computerChoice, result) {
         const historyList = document.getElementById('historyList');
         const li = document.createElement('li');
+        
+        // Show game history section when first game is added
+        if (historyList.children.length === 0) {
+            gameHistorySection.classList.add('has-history');
+        }
         
         const formattedPlayerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
         const formattedComputerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
@@ -94,5 +100,6 @@ document.addEventListener("DOMContentLoaded", function() {
         resultDisplay.textContent = "Pick your option";
         historyList.innerHTML = "";
         choices.forEach(choice => choice.classList.remove("active"));
+        gameHistorySection.classList.remove('has-history');
     });
 });

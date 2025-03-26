@@ -246,6 +246,11 @@ Layout styles
     background: none;
     box-shadow: none;
     padding: 0;
+    display: none; /* Hide by default */
+}
+
+.game-history.has-history {
+    display: block; /* Show when has-history class is added */
 }
 
 .game-history h2 {
@@ -856,6 +861,11 @@ button:hover {
     background: none;
     box-shadow: none;
     padding: 0;
+    display: none;
+}
+
+.game-history.has-history {
+    display: block;
 }
 
 .game-history h2 {
