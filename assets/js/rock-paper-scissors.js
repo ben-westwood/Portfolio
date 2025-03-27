@@ -33,9 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const historyList = document.getElementById('historyList');
         const li = document.createElement('li');
         
-        // Show game history section when first game is added
+        // Show game history section and reset button when first game is added
         if (historyList.children.length === 0) {
             gameHistorySection.classList.add('has-history');
+            resetBtn.classList.add('has-history');
         }
         
         const formattedPlayerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
@@ -101,5 +102,6 @@ document.addEventListener("DOMContentLoaded", function() {
         historyList.innerHTML = "";
         choices.forEach(choice => choice.classList.remove("active"));
         gameHistorySection.classList.remove('has-history');
+        resetBtn.classList.remove('has-history');
     });
 });
