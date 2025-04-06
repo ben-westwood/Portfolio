@@ -2,6 +2,37 @@
 Base styles
 ------------------------*/
 
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f5f5f5;
+    --header-bg: #000000;
+    --accent-color: #6AD069;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #1a1a1a;
+        --text-color: #ffffff;
+        --card-bg: #2d2d2d;
+        --header-bg: #000000;
+        --accent-color: #6AD069;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
+
+    .skill-category, .experience-item, .education-item, .contact-item {
+        background: var(--card-bg);
+    }
+
+    .calculator {
+        background: var(--card-bg);
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -137,29 +168,66 @@ Layout styles
 }
 
 .content-bar {
-    color: white; /* sets content bar text to white */
-    background: #000; /* sets content bar background to black */
-    padding: 1em;
-    margin-bottom: 1em;
+    margin: 3rem 0 1.5rem;
+    padding: 1.5rem;
+    background: #000;  /* Changed to black background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
 }
 
-.content-bar a {
-    color: white; /* keeps white colour for anchor tags */
-    text-decoration: none;
-    font-weight: bold;
+.content-bar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #6AD069;  /* Matching your theme's accent color */
 }
 
 .content-bar h3 {
-    color: white;
+    color: #fff;  /* Changed to white text */
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+/* Remove the old link styles since they're not needed */
+.content-bar a,
+.content-bar a:link,
+.content-bar a:visited {
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-.content-bar a:link {
-    color: #ffffff ; /* keeps white colour for hyperlinks */
+@media (max-width: 768px) {
+    .content-bar {
+        margin: 2rem 0 1rem;
+        padding: 1.2rem;
+    }
+    
+    .content-bar h3 {
+        font-size: 1.4rem;
+    }
 }
-.content-bar a:visited {
-    color: white; /* keeps white colour for hyperlinks after visiting page */
+
+.about-content, .contact-content, .project-content {
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .content-bar {
+        margin: 2rem 0 1rem;
+        padding: 0.8rem;
+    }
+    
+    .content-bar h3 {
+        font-size: 1.2rem;
+    }
 }
 
 .footer {
@@ -1356,5 +1424,107 @@ only screen and (max-width: 52em) {
         margin: 5px 0;
         text-align: center;
         box-sizing: border-box;
+    }
+}
+
+/* Project Section Styles - Consolidated Version */
+.project-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.project-description {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.project-links {
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.project-links a {
+    display: inline-block;
+    text-decoration: none;
+    width: auto;
+    min-width: 120px;
+    max-width: fit-content;
+    padding: 10px;
+}
+
+.project-details {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.project-details h3 {
+    color: #333;
+    margin: 15px 0 10px 0;
+}
+
+.project-details ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    padding-right: 20px;
+}
+
+.project-details li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* About and Contact Section Styles */
+.about-content, .contact-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.6;
+}
+
+.skills-grid, .experience-section, .education-section, .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.skill-category, .experience-item, .education-item, .contact-item {
+    background: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.skill-category h3, .experience-item h5, .education-item h5, .contact-item h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #0066cc;
+    padding-bottom: 0.5rem;
+}
+
+.contact-item a {
+    color: #0066cc;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #004999;
+}
+
+@media (max-width: 768px) {
+    .skills-grid, .experience-section, .education-section, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-item {
+        text-align: center;
     }
 }
