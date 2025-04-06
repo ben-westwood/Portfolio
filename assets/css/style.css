@@ -2,37 +2,6 @@
 Base styles
 ------------------------*/
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #333333;
-    --card-bg: #f5f5f5;
-    --header-bg: #000000;
-    --accent-color: #6AD069;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: #1a1a1a;
-        --text-color: #ffffff;
-        --card-bg: #2d2d2d;
-        --header-bg: #000000;
-        --accent-color: #6AD069;
-    }
-
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-    }
-
-    .skill-category, .experience-item, .education-item, .contact-item {
-        background: var(--card-bg);
-    }
-
-    .calculator {
-        background: var(--card-bg);
-    }
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -41,8 +10,13 @@ body {
     font: 1em "Montserrat", Helvetica, Arial, Geneva, sans-serif; /* sets Montserrat as main font with others as fallback fonts */
 }
 
-h1,h2,h3,h4,h5,h6 {
-    margin: 0 0 .5em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 0.5em;
     font-weight: 500;
     line-height: 1.1;
     word-wrap: break-word;
@@ -69,7 +43,7 @@ h5 {
 }
 
 h6 {
-    font-size: .875em; /* 14px */
+    font-size: 0.875em; /* 14px */
 }
 
 p {
@@ -85,7 +59,6 @@ hr {
     border: 0;
     border-top: 0.063em solid #ddd; /* sets grey as colour */
 }
-
 
 /* -----------------------
 Form
@@ -134,7 +107,7 @@ select::-ms-expand {
 
 /* Hover state for dropdowns */
 select:hover {
-    border-color: #6AD069;
+    border-color: #6ad069;
 }
 
 /* -----------------------
@@ -148,7 +121,7 @@ Layout styles
 
 .header {
     color: #fff; /* changes the header text colour */
-    background: #6AD069; /* changes the header background colour */
+    background: #6ad069; /* changes the header background colour */
     padding: 1.5em 3em;
 }
 
@@ -170,25 +143,25 @@ Layout styles
 .content-bar {
     margin: 3rem 0 1.5rem;
     padding: 1.5rem;
-    background: #000;  /* Changed to black background */
+    background: #000;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
 }
 
 .content-bar::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 3px;
-    background: #6AD069;  /* Matching your theme's accent color */
+    background: #6ad069;
 }
 
 .content-bar h3 {
-    color: #fff;  /* Changed to white text */
+    color: #fff;
     margin: 0;
     font-size: 1.6rem;
     font-weight: 500;
@@ -209,13 +182,15 @@ Layout styles
         margin: 2rem 0 1rem;
         padding: 1.2rem;
     }
-    
+
     .content-bar h3 {
         font-size: 1.4rem;
     }
 }
 
-.about-content, .contact-content, .project-content {
+.about-content,
+.contact-content,
+.project-content {
     margin-top: 1rem;
 }
 
@@ -224,7 +199,7 @@ Layout styles
         margin: 2rem 0 1rem;
         padding: 0.8rem;
     }
-    
+
     .content-bar h3 {
         font-size: 1.2rem;
     }
@@ -239,7 +214,7 @@ Layout styles
 
 .footer p {
     margin: auto;
-    color: #6AD069;
+    color: #6ad069;
 }
 
 .result {
@@ -284,9 +259,9 @@ Layout styles
 }
 
 .choice.active {
-    background-color: #6AD069;
+    background-color: #6ad069;
     color: white;
-    border-color: #6AD069;
+    border-color: #6ad069;
 }
 
 .result-display {
@@ -446,7 +421,7 @@ Layout styles
 
 .game-history .win {
     background-color: #e8f5e9;
-    color: #6AD069;
+    color: #6ad069;
 }
 
 .game-history .lose {
@@ -491,28 +466,25 @@ Nav
 
 .nav a:hover {
     color: white;
-    background-color: #6AD069;
+    background-color: #6ad069;
 }
 
 /* -----------------------
 Single styles
 ------------------------*/
 
-.list-unstyled
-{
+.list-unstyled {
     padding-left: 0;
     list-style: none;
 }
 
-.list-inline
-{
+.list-inline {
     padding-left: 0;
     margin-left: -0.313em;
     list-style: none;
 }
 
-.list-inline > li
-{
+.list-inline > li {
     display: inline-block;
     padding-right: 0.313em;
     padding-left: 0.313em;
@@ -520,7 +492,7 @@ Single styles
 
 button {
     flex: 1;
-    background-color: #4CAF50;
+    background-color: #4caf50;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -532,7 +504,7 @@ button {
 }
 
 button:hover {
-    opacity:1;
+    opacity: 1;
 }
 
 .center {
@@ -544,7 +516,7 @@ button:hover {
 .calculator {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 15px;
 }
@@ -571,7 +543,7 @@ button:hover {
 }
 
 .input-group input:focus {
-    border-color: #6AD069;
+    border-color: #6ad069;
     outline: none;
     background-color: #fff;
 }
@@ -598,9 +570,9 @@ button:hover {
 }
 
 .percentage-button.active {
-    background-color: #6AD069;
+    background-color: #6ad069;
     color: white;
-    border-color: #6AD069;
+    border-color: #6ad069;
 }
 
 .custom-tip {
@@ -622,7 +594,7 @@ button:hover {
 }
 
 .custom-tip input:focus {
-    border-color: #6AD069;
+    border-color: #6ad069;
     outline: none;
     background-color: #fff;
 }
@@ -630,7 +602,7 @@ button:hover {
 #calculateBtn {
     width: 100%;
     padding: 10px;
-    background-color: #6AD069;
+    background-color: #6ad069;
     color: white;
     border: none;
     border-radius: 4px;
@@ -662,7 +634,7 @@ button:hover {
 .result p:last-child {
     border-bottom: none;
     font-weight: bold;
-    color: #6AD069;
+    color: #6ad069;
 }
 
 .error {
@@ -707,7 +679,7 @@ button:hover {
 .expense-tracker {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 15px;
 }
@@ -733,7 +705,7 @@ button:hover {
 
 #expense-form input:focus,
 #expense-form select:focus {
-    border-color: #6AD069;
+    border-color: #6ad069;
     outline: none;
     background-color: #fff;
 }
@@ -773,7 +745,7 @@ button:hover {
 
 .expense-amount {
     font-weight: bold;
-    color: #6AD069;
+    color: #6ad069;
     margin: 0 20px;
 }
 
@@ -794,7 +766,7 @@ button:hover {
 #total-amount {
     font-size: 1.5em;
     font-weight: bold;
-    color: #6AD069;
+    color: #6ad069;
     text-align: right;
     margin: 20px 0;
 }
@@ -820,7 +792,7 @@ button:hover {
 }
 
 .stat-bar {
-    background-color: #6AD069;
+    background-color: #6ad069;
     height: 100%;
     transition: width 0.3s ease;
 }
@@ -852,7 +824,7 @@ button:hover {
 }
 
 #currency-select:focus {
-    border-color: #6AD069;
+    border-color: #6ad069;
     outline: none;
     background-color: #fff;
 }
@@ -860,7 +832,7 @@ button:hover {
 .game-container {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin-bottom: 15px;
 }
@@ -887,14 +859,14 @@ button:hover {
 }
 
 .choice:hover {
-    border-color: #6AD069;
+    border-color: #6ad069;
     background-color: #f0f9f0;
 }
 
 .choice.active {
-    background-color: #6AD069;
+    background-color: #6ad069;
     color: white;
-    border-color: #6AD069;
+    border-color: #6ad069;
 }
 
 .result-display {
@@ -925,7 +897,7 @@ button:hover {
     display: block;
     font-size: 1.5em;
     font-weight: bold;
-    color: #6AD069;
+    color: #6ad069;
     margin-top: 5px;
 }
 
@@ -1022,7 +994,7 @@ button:hover {
 }
 
 .win {
-    color: #6AD069;
+    color: #6ad069;
     font-weight: bold;
 }
 
@@ -1080,35 +1052,34 @@ button:hover {
 /* -----------------------
 Wide styles
 ------------------------*/
-@media 
-only screen and (max-width: 52em) {
+@media only screen and (max-width: 52em) {
     .header {
         padding: 1em 1.25em;
     }
-    
+
     .nav-bar {
         padding: 0;
     }
-    
+
     .content {
         padding: 1em 1.25em;
     }
-    
+
     .footer {
         padding: 1em 1.25em;
     }
-    
+
     .nav li {
         display: inline;
         margin: 0;
     }
-    
+
     .nav a {
         display: block;
-        padding: .7em 1.25em;
+        padding: 0.7em 1.25em;
         border-bottom: 0.063em;
     }
-    
+
     .percentage-button {
         width: 100%;
         margin-top: 0.25em;
@@ -1133,7 +1104,7 @@ only screen and (max-width: 52em) {
     }
 }
 
-/* Add/Update Form Section styles */
+/* Form Section styles */
 .form-section {
     background: none;
     box-shadow: none;
@@ -1176,7 +1147,7 @@ only screen and (max-width: 52em) {
 .btn-submit {
     width: 100%;
     padding: 10px;
-    background-color: #6AD069;
+    background-color: #6ad069;
     color: white;
     border: none;
     border-radius: 4px;
@@ -1243,7 +1214,7 @@ only screen and (max-width: 52em) {
 }
 
 #currency-select:focus {
-    border-color: #6AD069;
+    border-color: #6ad069;
     outline: none;
     background-color: #fff;
 }
@@ -1354,80 +1325,7 @@ only screen and (max-width: 52em) {
     }
 }
 
-/* Project Section Styles - Consolidated Version */
-.project-content {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.project-description {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    word-wrap: break-word;
-}
-
-.project-links {
-    text-align: left;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.project-links a {
-    display: inline-block;
-    text-decoration: none;
-    width: auto;
-    min-width: 120px;
-    max-width: fit-content;
-    padding: 10px;
-}
-
-.project-details {
-    margin-top: 20px;
-    width: 100%;
-}
-
-.project-details h3 {
-    color: #333;
-    margin: 15px 0 10px 0;
-}
-
-.project-details ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    margin-bottom: 15px;
-    padding-right: 20px;
-}
-
-.project-details li {
-    margin-bottom: 5px;
-    color: #555;
-}
-
-@media only screen and (max-width: 52em) {
-    .project-content {
-        padding: 15px 0;
-    }
-    
-    .project-links {
-        width: 100%;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .project-links a {
-        display: block;
-        width: 100%;
-        max-width: 300px;
-        margin: 5px 0;
-        text-align: center;
-        box-sizing: border-box;
-    }
-}
-
-/* Project Section Styles - Consolidated Version */
+/* Project Section Styles */
 .project-content {
     width: 100%;
     margin: 0;
@@ -1479,27 +1377,37 @@ only screen and (max-width: 52em) {
 }
 
 /* About and Contact Section Styles */
-.about-content, .contact-content {
+.about-content,
+.contact-content {
     max-width: 800px;
     margin: 2rem auto;
     line-height: 1.6;
 }
 
-.skills-grid, .experience-section, .education-section, .contact-grid {
+.skills-grid,
+.experience-section,
+.education-section,
+.contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin: 2rem 0;
 }
 
-.skill-category, .experience-item, .education-item, .contact-item {
+.skill-category,
+.experience-item,
+.education-item,
+.contact-item {
     background: #f5f5f5;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.skill-category h3, .experience-item h5, .education-item h5, .contact-item h4 {
+.skill-category h3,
+.experience-item h5,
+.education-item h5,
+.contact-item h4 {
     color: #333;
     margin-bottom: 1rem;
     font-size: 1.2rem;
@@ -1519,11 +1427,35 @@ only screen and (max-width: 52em) {
     color: #004999;
 }
 
-@media (max-width: 768px) {
-    .skills-grid, .experience-section, .education-section, .contact-grid {
-        grid-template-columns: 1fr;
+/* Media Queries */
+@media only screen and (max-width: 52em) {
+    .project-content {
+        padding: 15px 0;
+    }
+
+    .project-links {
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-links a {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+        text-align: center;
+        box-sizing: border-box;
     }
     
+    .skills-grid,
+    .experience-section,
+    .education-section,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact-item {
         text-align: center;
     }
